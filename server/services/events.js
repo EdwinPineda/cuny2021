@@ -15,7 +15,6 @@ const createEvent = async (data) => {
 }
 
 const getEventByLocation = async (data) => {
-    console.log(data)
     const event = await db.Events.findAll({ where: { location: data } });
 
     return event;

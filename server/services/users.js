@@ -22,11 +22,13 @@ const verifyJwtToken = (token) => {
     });
 };
 
-/**
- * 
- * @param {Object} data - User data
- * @returns {Promise<Model>} User model instance  
- */
+
+const getUserByEmail = async (data) => {
+    const user = await db.Users.findOne({ where: { email: data } });
+
+    return user;
+}
+
 const createUser = async (data) => {
     const user = await db.Users.create( {
         first_name : data.first_name,
@@ -34,11 +36,20 @@ const createUser = async (data) => {
         email : data.email, 
         password : data.password
     })
+
+    const id = await getUserByEmail(data.email);
+
+    await db.Profiles.create({
+        userID: id.dataValues.userID
+    })
+
+
     return user;
 }
 
 module.exports = {
     getJwtToken,
     verifyJwtToken,
-    createUser
+    createUser,
+    getUserByEmail
 }
