@@ -8,7 +8,7 @@ export class Events extends Component{
         return(
             <div>
                 <NavBar/>
-                <div>
+                <div className="wrapper">
                     <h1>All Events</h1>
                     <Card>
                         <Card.Body>

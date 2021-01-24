@@ -13,9 +13,13 @@ const getProfile = (id) => {
     return axios.get(`http://localhost:5000/api/profiles/get?id=${id}`)
 }
 
+const createEvent = (data) => {
+    return axios.post(`http://localhost:5000/api/events/register` , data)
+}
 
 export {
     registerUser,
     loginUser,
-    getProfile
+    getProfile,
+    createEvent
 }

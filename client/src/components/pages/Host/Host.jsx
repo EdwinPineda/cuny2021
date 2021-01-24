@@ -3,10 +3,68 @@ import { ListGroup } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import NavBar from "../../NavBar/NavBar";
+import * as API from '../../../util/api';
+import { AuthContext } from "../../../context/authContext";
 
 import './Host.css';
 
 export class Host extends Component {
+        static contextType = AuthContext;
+
+        state = {
+                name: "",
+                address: "",
+                city: "",
+                state: "",
+                date: "2021-11-20",
+                time: "",
+                desc: "",
+                owner: null
+        }
+
+        componentDidMount() {
+                setTimeout(() => {
+                    const { userID } = this.context;
+        
+                    this.setState({
+                        owner: userID
+                    });
+        
+                }, 10)
+        
+            }
+        
+
+        handleChange = (e) =>{
+                const {name,value} = e.target;
+                this.setState({[name]: value})
+        }
+
+        handleSubmit = (e) =>{
+                e.preventDefault();
+                const {name, address, city, state, time, desc, owner, date} = this.state;
+                const location = `${address} ${city}, ${state}`
+
+                API.createEvent({
+                        name,
+                        location,
+                        time,
+                        desc,
+                        owner,
+                        date
+                }).then((result) => {
+                        if (result.status === 200) {
+                                console.log(result.data);
+                                this.props.history.push('/events')
+                        }
+                }).catch((error) => {
+                        console.log(error);
+                })
+                
+        
+        }
+
+
     render() {
         return (
             <div>
@@ -18,7 +76,7 @@ export class Host extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <div className="eventtName">
                               <label htmlFor="eventName">Event Name</label>
-                                <input type="text" className="" placeholder="Event Name" type="text" name ="event_name" noValidate onChange={this.handleChange}/>
+                                <input type="text" className="" placeholder="Event Name" type="text" name ="name" noValidate onChange={this.handleChange}/>
                         </div>
     
                         <div className="address">
@@ -48,14 +106,10 @@ export class Host extends Component {
     
                         <div className="description">
                                 <label htmlFor="description">Description</label>
-                                <input type="text" className="" placeholder="Briefly describe your event." type="text" name ="description" noValidate onChange={this.handleChange}/>
+                                <input type="text" className="" placeholder="Briefly describe your event." type="text" name ="desc" noValidate onChange={this.handleChange}/>
                         </div>
     
-                        <div className="host_event">
-                                        <form action="/AllEvents" class="inline">
-                                                <button class="float-left submit-button" >Host Event</button>
-                                        </form>
-                        </div>
+                        <button className="float-left submit-button" >Host Event</button>
     
                     </form>
                 </div>

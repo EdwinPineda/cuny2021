@@ -9,7 +9,7 @@ import Profile from './components/pages/Profile/Profile';
 import Events from './components/pages/Events/Events';
 import Host from './components/pages/Host/Host';
 import Past from './components/pages/Past/Past';
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./privateRoute";
 
 export class App extends Component {
   render() {

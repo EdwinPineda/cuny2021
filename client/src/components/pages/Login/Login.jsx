@@ -73,9 +73,7 @@ export class Login extends Component {
                                 </div>
 
                                 <div className="login">
-                                    <form action="/" class="inline">
                                             <button class="float-left submit-button" >Login</button>
-                                    </form>
                                     <small>Don't have an account? Click here to register</small>
                                 </div>
                             </form>
