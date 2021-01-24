@@ -30,6 +30,15 @@ export class Events extends Component{
 
                     <Card>
                         <Card.Body>
+                            <Card.Title>Dog Meet and Clean</Card.Title>
+                            <Card.Subtitle>1/26/2021, 9:00AM-6:00PM, at Alley Pond Park</Card.Subtitle>
+                            <Card.Text>Bring your dog to the park to socialize while keeping the park clean!</Card.Text>
+                            <Card.Link href="#">Click to Join</Card.Link>
+                        </Card.Body>
+                    </Card>
+
+                    <Card>
+                        <Card.Body>
                             <Card.Title>Swim and Clean</Card.Title>
                             <Card.Subtitle>1/27/2021, 2:00PM-8:00PM, at Coney Island</Card.Subtitle>
                             <Card.Text>Have fun while keeping the environment clean :)</Card.Text>

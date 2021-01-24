@@ -60,7 +60,6 @@ class SignUp extends Component{
         return(
             <div>
                 <NavBar/>
-
             <div className="wrapper">
             <div className="form-wrapper">
                 <h1>Register for Meet&Clean</h1>
@@ -99,7 +98,7 @@ class SignUp extends Component{
                                     <form action="/" class="inline">
                                             <button class="float-left submit-button" >Register now</button>
                                     </form>
-                                    <small>Already have an account? Click here to register</small>
+                                    <small>Already have an account? Click here to login</small>
                     </div>
 
 
