@@ -1,12 +1,12 @@
 export const AuthUsersMenu = [
     {
         title: 'Host Event',
-        url: '#',
+        url: '/host',
         cName: 'nav=links'
     },
     {
         title: 'Events',
-        url: '#',
+        url: '/events',
         cName: 'nav=links'
     },
     {
@@ -16,7 +16,7 @@ export const AuthUsersMenu = [
     },
     {
         title: 'Logout',
-        url: '#',
+        url: '/logout',
         cName: 'nav=links'
     }
 ]

@@ -3,8 +3,6 @@ import NavBar from "../../NavBar/NavBar";
 import './Events.css'
 import Card from 'react-bootstrap/Card'
 
-
-
 export class Events extends Component{
     render(){
         return(
