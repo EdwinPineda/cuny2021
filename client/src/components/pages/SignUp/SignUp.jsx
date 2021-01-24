@@ -58,8 +58,9 @@ class SignUp extends Component{
 
     render(){
         return(
-            <>
-            <NavBar />
+            <div>
+                <NavBar/>
+
             <div className="wrapper">
             <div className="form-wrapper">
                 <h1>Register for Meet&Clean</h1>
@@ -105,7 +106,7 @@ class SignUp extends Component{
                 </form>
             </div>
             </div>
-        </>
+        </div>
         )
     }
 }
