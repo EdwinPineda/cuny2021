@@ -1,12 +1,12 @@
 export const MenuItems = [
     {
         title: 'SignUp',
-        url: '#',
+        url: '/register',
         cName: 'nav=links'
     },
     {
         title: 'Login',
-        url: '#',
+        url: '/login',
         cName: 'nav=links'
     }
 ]
