@@ -6,8 +6,8 @@ var Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     const Events = sequelize.define('Events', {
 
-        events_id: {
-            type: DataTypes.STRING,
+        eventID: {
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },

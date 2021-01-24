@@ -6,27 +6,23 @@ var Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     const Profiles = sequelize.define('Profiles', {
         profilesID: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        user_age: {
+        age: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        user_location: {
+        location: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        user_interest: {
+        interest: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        user_bios: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        user_social_media:{
+        social_media:{
             type: DataTypes.STRING,
             allowNull: true,
         }
