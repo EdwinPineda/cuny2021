@@ -7,6 +7,8 @@ import * as API from '../../../util/api';
 
 
 export class Login extends Component {
+    static contextType = AuthContext;
+
     state={
         email:'',
         password:'',
@@ -29,7 +31,27 @@ export class Login extends Component {
             newState.errors.push("Please Fill out all fields. ");
         }
         else {
-            
+            API.loginUser({
+                email,
+                password
+            }).then((result) => {
+                console.log(result);
+                if (result.status === 200) {
+                    const { setUser, setTokens, setAuthToken } = this.context;
+                    const { token } = result.data;
+                    const decoded = jwt_decode(token);
+                    setUser(decoded)
+                    setTokens(token)
+                    setAuthToken(token)
+                    this.setState((prevState) => {
+                    return { userID: decoded.id, email: decoded.email, isAuthenticated: true };
+                    })
+                    this.props.history.push('/events');
+                }
+
+            }).catch((errors) => {
+                console.log(errors);
+            })
         }
 
     }
@@ -39,16 +61,16 @@ export class Login extends Component {
                 <NavBar/>
                 <h3>Meet&Clean Login</h3>
                 <div>
-                <form>
+                <form onSubmit={this.handleSubmit}> 
                     <div>
                         <input type='email' name='email' placeholder='email...' required onChange={this.handleChange}/>
                     </div>
 
                     <div>
-                    <input type='password' name='pwd' placeholder='password' required onChange={this.handleChange}/>
+                    <input type='password' name='password' placeholder='password' required onChange={this.handleChange}/>
                     </div>
 
-                    <button onSubmit={this.handleSubmit}>Login</button>
+                    <button>Login</button>
                 </form>
                 </div>
             </div>
