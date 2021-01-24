@@ -22,7 +22,7 @@ export class App extends Component {
             <Route exact path="/register" component={SignUp} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/events" component={Events} />
-            <PrivateRoute exact path="/host" component={Host} />
+            <Route exact path="/host" component={Host} />
             <PrivateRoute exact path="/past" component={Past} />
           </Switch>
         </Router>
