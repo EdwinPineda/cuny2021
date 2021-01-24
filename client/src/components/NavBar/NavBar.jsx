@@ -12,8 +12,6 @@ export class NavBar extends Component {
         return (
             <nav className="NavBarItems">
                 <h1 className="className-logo">Meet&Clean</h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {
                         return(<li key={index}>
