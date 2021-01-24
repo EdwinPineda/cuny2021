@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 const options = {
-    cors:true,
-    origins:["http://127.0.0.1:5000"],
+  cors:true,
+  origins:["http://127.0.0.1:5000"],
 };
 
 const server = require('http').createServer(app);
@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use('/api', routes);
 
-db.sequelize.sync({ force: false});
+db.sequelize.sync({ force: false });
 
 db.sequelize
   .authenticate()

@@ -11,18 +11,26 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        events_name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        events_location: {
+        location: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        events_time: {
+        desc: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+        },
+        time: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
         {
             freezeTableName: true,

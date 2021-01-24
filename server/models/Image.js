@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
       uploadedBy: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'User',
+          model: 'Users',
           key: 'userID'
         }
       },
