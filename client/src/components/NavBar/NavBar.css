@@ -1,17 +1,10 @@
 .NavBarItems{
-    background: #b0c38d;
+    background: #ded797;
     max-height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-}
-
-.navbar-logo{
-    color:#fff;
-    justify-content: start;
-    margin-left: 20px;
-    cursor: pointer;
 }
 
 .nav-menu {
@@ -30,8 +23,4 @@
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-}
-
-.menu-icon{
-    display: none;
 }

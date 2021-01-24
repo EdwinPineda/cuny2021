@@ -1,7 +1,7 @@
 import React, { Component, } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
-
+import SignUp from './components/pages/SignUp/SignUp';
 import { AuthProvider } from "./context/authContext";
 import Home from "./components/pages/Home/Home";
 import Login from './components/pages/Login/Login';
@@ -10,8 +10,7 @@ import Profile from './components/pages/Profile/Profile';
 import Events from './components/pages/Events/Events';
 import Host from './components/pages/Host/Host';
 import Past from './components/pages/Past/Past';
-import PrivateRoute from "./PrivateRoute";
-
+import PrivateRoute from "./privateRoute";
 
 export class App extends Component {
   render() {
@@ -32,5 +31,4 @@ export class App extends Component {
     );
   }
 }
-
 export default App;
