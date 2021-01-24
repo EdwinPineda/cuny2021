@@ -29,6 +29,13 @@ const getUserByEmail = async (data) => {
     return user;
 }
 
+const getUserByID = async (data) => {
+    const user = await db.Users.findOne({ where: { userID: data } });
+
+    return user;
+}
+
+
 const createUser = async (data) => {
     const user = await db.Users.create( {
         first_name : data.first_name,
@@ -51,5 +58,6 @@ module.exports = {
     getJwtToken,
     verifyJwtToken,
     createUser,
-    getUserByEmail
+    getUserByEmail,
+    getUserByID
 }

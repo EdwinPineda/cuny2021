@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
+import NavBar from '../../NavBar/NavBar'
+
 export class Events extends Component {
     render() {
         return (
-            <div>
-                
-            </div>
+            <>
+               <NavBar /> 
+            </>
         )
     }
 }

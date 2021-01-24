@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
 
 import './Profile.css';
+import starter from '../../../images/starter.png'
 import * as API from "../../../util/api";
 import { AuthContext } from "../../../context/authContext";
 import NavBar from '../../NavBar/NavBar';
@@ -14,9 +15,9 @@ export class Profile extends Component {
         userID: null,
         first_name: null,
         last_name: null,
-        bio: null,
-        age: null,
-        Neighborhood: null,
+        bio: "Love Cleaning stuff up",
+        age: 23,
+        Neighborhood: "New York",
         myEvents: [],
         pastEvents: []
 
@@ -39,14 +40,25 @@ export class Profile extends Component {
     }
 
     getProfileInfo = (id) => {
-
+        API.getProfile(id).then((result) => {
+            if (result.status === 200) {
+                console.log(result.data);
+                this.setState({
+                    first_name: result.data.user.first_name,
+                    last_name: result.data.user.last_name,
+                })
+            }
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 
     render() {
         const { first_name, last_name, bio, age, Neighborhood, myEvents, pastEvents } = this.state;
         return (
-            <div className="custom-con">
+            <>
                 <NavBar />
+                <div className="custom-con">
                 <div className="box">
                     <Row>
                         <div className="Info">
@@ -57,11 +69,11 @@ export class Profile extends Component {
                             <div className="m-2">Location: {Neighborhood}</div>
                         </div>
                         <div className="image">
-
+                            <Image src={starter} height='450' width='450' className="image-spacing"/>
                         </div>
                     </Row>
                 </div>
-                <div className="box2">
+                {/* <div className="box2">
                     <div className="m-2">{myEvents}</div>
                 </div>
                 <div className="box3">
@@ -69,8 +81,9 @@ export class Profile extends Component {
                 </div>
                 <div className="box4">
                     <div className="m-2">{pastEvents}</div>
+                </div> */}
                 </div>
-            </div>
+            </>
         )
     }
 }

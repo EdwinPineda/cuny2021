@@ -9,7 +9,7 @@ import Profile from './components/pages/Profile/Profile';
 import Events from './components/pages/Events/Events';
 import Host from './components/pages/Host/Host';
 import Past from './components/pages/Past/Past';
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./privateRoute";
 
 export class App extends Component {
   render() {
@@ -22,7 +22,7 @@ export class App extends Component {
             <Route exact path="/register" component={SignUp} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/events" component={Events} />
-            <Route exact path="/host" component={Host} />
+            <PrivateRoute exact path="/host" component={Host} />
             <PrivateRoute exact path="/past" component={Past} />
           </Switch>
         </Router>
