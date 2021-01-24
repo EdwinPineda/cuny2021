@@ -58,7 +58,7 @@ export class Login extends Component {
     render() {
         return (
             <div>   
-                 <NavBar/>
+                <NavBar/>
                 <div className="wrapper">
                     <div className="form-wrapper">
                     <h3>Meet&Clean Login</h3>
