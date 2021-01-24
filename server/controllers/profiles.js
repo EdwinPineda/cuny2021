@@ -1,12 +1,10 @@
-const ProfileServices = require("../services/profile.js")
-
-
+const ProfileServices = require("../services/profiles.js")
 
 const userID = async (req,res,next) => {
-    const { userID } = req.query;
+    const { id } = req.query;
 
     try {
-        const event = await EventServices.getProfileByuserID(userID);
+        const profile = await ProfileServices.getProfileByuserID(id);
         return res.json(profile)
     }
     catch (error) {

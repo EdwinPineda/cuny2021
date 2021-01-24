@@ -2,10 +2,10 @@ const express = require('express');
 const router = new express.Router();
 
 
-const profileController = require('../controller/profile.js')
+const profileController = require('../controllers/profiles.js')
 
 
-router.get('/userID',
+router.get('/get',
     [
 
     ]

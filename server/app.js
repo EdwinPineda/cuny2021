@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const db = require('./models');
 const routes = require('./routes/index');
+global.__basedir = __dirname;
 
 const PORT = process.env.PORT || 5000;
 
