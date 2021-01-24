@@ -4,6 +4,7 @@ const createEvent = async (data) => {
 
     const event = await db.Events.create( {
         name: data.name,
+        owner: data.owner,
         location: data.location,
         desc: data.desc,
         date: data.date,
@@ -13,6 +14,28 @@ const createEvent = async (data) => {
     return event;
 }
 
+const getEventByLocation = async (data) => {
+    console.log(data)
+    const event = await db.Events.findAll({ where: { location: data } });
+
+    return event;
+}
+
+const getEventByOwner = async (data) => {
+    const event = await db.Events.findAll({ where: { owner: data } });
+    
+    return event;
+}
+
+const getEventByDate = async (data) => {
+    const event = await db.Events.findAll({ where: { date: data } });
+    
+    return event;
+}
+
 module.exports = {
-    createEvent
+    createEvent,
+    getEventByLocation,
+    getEventByOwner,
+    getEventByDate
 }

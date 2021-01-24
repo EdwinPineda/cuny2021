@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        owner : {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Users',
+                key: 'userID'
+            }
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
