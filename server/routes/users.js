@@ -1,7 +1,7 @@
 const express = require('express');
 const router = new express.Router();
 
-const userController = require('../../controllers/users.js')
+const userController = require('../controllers/users.js')
 
 
 router.post('/register',
@@ -10,13 +10,6 @@ router.post('/register',
     ]
 , userController.register)
 
-
-/**
- * Login user and return JWT token
- *
- * @memberof module:api/users
- * @name POST /login
- */
 router.post('/login',
     [
 

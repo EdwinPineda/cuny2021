@@ -28,8 +28,9 @@ const verifyJwtToken = (token) => {
  * @returns {Promise<Model>} User model instance  
  */
 const createUser = async (data) => {
-    const user = await db.User.create( {
-        name : data.name,
+    const user = await db.Users.create( {
+        first_name : data.first_name,
+        last_name: data.last_name,
         email : data.email, 
         password : data.password
     })
