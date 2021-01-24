@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Redirect, Route } from "react-router-dom";
-import { AuthContext } from "./Context/authContext";
+import { AuthContext } from "./context/authContext";
 
 function PrivateRoute({ component: Component, ...rest }) {
   const { checkTokenExist }  = useContext(AuthContext);
-   
+
   return (
     <Route
       {...rest}
@@ -16,7 +16,7 @@ function PrivateRoute({ component: Component, ...rest }) {
         )
       }
     />
-  );
+  )
 }
 
 export default PrivateRoute;
