@@ -93,10 +93,15 @@ class SignUp extends Component{
                             <label htmlFor="retypePassword">Retype Password</label>
                             <input type="text" className="" placeholder="Retype Password" type="text" name ="password2" noValidate onChange={this.handleChange}/>
                     </div>
-                    <div className="createAccount">
-                        <button type="submit">Create an account</button>
-                        <small>Already have an account? Click here to sign in</small>
+                
+                    <div className="register">
+                                    <form action="/" class="inline">
+                                            <button class="float-left submit-button" >Register now</button>
+                                    </form>
+                                    <small>Already have an account? Click here to register</small>
                     </div>
+
+
                 </form>
             </div>
             </div>

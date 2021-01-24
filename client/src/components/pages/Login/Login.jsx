@@ -61,25 +61,27 @@ export class Login extends Component {
                 <NavBar/>
                 <div className="wrapper">
                     <div className="form-wrapper">
-                    <h3>Meet&Clean Login</h3>
-                <div>
-                    <form onSubmit={this.handleSubmit}> 
-                        <div>
-                            <input type='email' name='email' placeholder='Email...' required onChange={this.handleChange}/>
-                        </div>
+                        <h3>Meet&Clean Login</h3>
+                        <div>   
+                            <form onSubmit={this.handleSubmit}> 
+                                <div>
+                                    <input type='email' name='email' placeholder='Email...' required onChange={this.handleChange}/>
+                                </div>
 
-                        <div>
-                        <input type='password' name='password' placeholder='Password' required onChange={this.handleChange}/>
-                        </div>
+                                <div>
+                                    <input type='password' name='password' placeholder='Password' required onChange={this.handleChange}/>
+                                </div>
 
-                        <div className="login">
-                            <button type="login">Login to your account</button>
-                            <small>Don't have an account? Click here to register</small>
+                                <div className="login">
+                                    <form action="/" class="inline">
+                                            <button class="float-left submit-button" >Login</button>
+                                    </form>
+                                    <small>Don't have an account? Click here to register</small>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
                     </div>
-            </div>
+                </div>
             </div>
             
         )

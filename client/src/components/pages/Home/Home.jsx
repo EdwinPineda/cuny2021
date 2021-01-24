@@ -4,7 +4,7 @@ import './Home.css'
 export class Home extends Component {
     render() {
         return (
-            <div>
+            <div className="intro">
                 <NavBar/>
                 <body>
                     <h1>Welcome to Meet&Clean!</h1>
