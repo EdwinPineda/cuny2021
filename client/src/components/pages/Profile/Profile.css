@@ -1,15 +1,13 @@
-.custom-con {
-    margin-top: 5%;
-    margin-left: 20%;
+.wrap {
+    background-color: #b0c38d;
 }
 
 .box {
     background-color: rgb(125, 209, 248);
     padding: 20px;
-    height: 30%;
+    height: 60%;
     width: 66%;
     border: 5px solid rgb(132, 218, 132);
-    margin: 10px;
     font-size: 25px;
 }
 

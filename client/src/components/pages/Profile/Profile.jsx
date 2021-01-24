@@ -58,7 +58,8 @@ export class Profile extends Component {
         return (
             <>
                 <NavBar />
-                <div className="custom-con">
+                <div className="wrapper">
+                    
                 <div className="box">
                     <Row>
                         <div className="Info">
@@ -73,6 +74,8 @@ export class Profile extends Component {
                         </div>
                     </Row>
                 </div>
+      
+                
                 {/* <div className="box2">
                     <div className="m-2">{myEvents}</div>
                 </div>
