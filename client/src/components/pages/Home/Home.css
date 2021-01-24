@@ -1,12 +1,19 @@
 .pageTitle{
     margin-top: 2%;
     text-align: center;
+    background-color: #b0c38d;
     margin-bottom: 5%;
     
+}
+.intro {
+    height: 100vh;
+    width: 100%;
+    background-color: #b0c38d;
 }
 
 h2{
     text-align: center;
+    background-color: #b0c38d;
     color: #31595e
 }
 

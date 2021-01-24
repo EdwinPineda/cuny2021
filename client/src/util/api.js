@@ -17,9 +17,14 @@ const createEvent = (data) => {
     return axios.post(`http://localhost:5000/api/events/register` , data)
 }
 
+const getEventByLocation = (location) => {
+    return axios.get(`http://localhost:5000/api/events/location?location=${location}`)
+}
+
 export {
     registerUser,
     loginUser,
     getProfile,
-    createEvent
+    createEvent,
+    getEventByLocation
 }

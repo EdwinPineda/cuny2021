@@ -4,11 +4,20 @@ import './Events.css'
 import Card from 'react-bootstrap/Card'
 
 export class Events extends Component{
+
+    state = {
+        location: "new york"
+    }
+
+
+
+
+
     render(){
         return(
             <div>
                 <NavBar/>
-                <div className="wrapper">
+                <div className="events">
                     <h1>All Events</h1>
                     <Card>
                         <Card.Body>
