@@ -7,7 +7,7 @@ export class Home extends Component {
             <div className="intro">
                 <NavBar/>
                 <body>
-                    <h1>Welcome to Meet&Clean!</h1>
+                    <h1 className="pageTitle">Welcome to Meet&Clean!</h1>
                 </body>
                 
                 <h2>Our goals</h2>
