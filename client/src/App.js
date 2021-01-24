@@ -17,7 +17,7 @@ export class App extends Component {
       <AuthProvider>
         <Router>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Events} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={SignUp} />
             <PrivateRoute exact path="/profile" component={Profile} />
